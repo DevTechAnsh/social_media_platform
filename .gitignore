@@ -1,0 +1,22 @@
+# Virtual environment
+venv/
+
+# Django-related
+*.log
+db.sqlite3
+__pycache__/
+media/
+
+# Ignore local settings
+social_network/settings_local.py
+
+# Byte-compiled files
+*.pyc
+*.pyo
+__pycache__/
+
+# Visual Studio Code
+.vscode/
+
+# Compiled Python files
+*.pyc

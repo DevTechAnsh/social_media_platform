@@ -1,0 +1,368 @@
+{
+	"info": {
+		"_postman_id": "32cdd1e3-7157-4e1d-968c-20ace3803910",
+		"name": "AccuKnox",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "31451288"
+	},
+	"item": [
+		{
+			"name": "Login",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "email",
+							"value": "user2@example.com",
+							"type": "text"
+						},
+						{
+							"key": "password",
+							"value": "Test@123",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://127.0.0.1:8000/api/login/",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"login",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Signup",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "email",
+							"value": "testuser@gmail.com",
+							"type": "text"
+						},
+						{
+							"key": "password",
+							"value": "Test@123",
+							"type": "text"
+						},
+						{
+							"key": "password2",
+							"value": "Test@123",
+							"type": "text"
+						},
+						{
+							"key": "first_name",
+							"value": "Testname",
+							"type": "text"
+						},
+						{
+							"key": "last_name",
+							"value": "Lastname",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://127.0.0.1:8000/api/users/",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"users",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Search Users",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzA1NjQyNjk1LCJpYXQiOjE3MDU2NDA4OTUsImp0aSI6IjYyNWMxMDY3MDg3MzRlMzhiNDdhZmM1ZmFmZGQwZTBkIiwidXNlcl9pZCI6MTB9.b-tTbiZ5NUFEeVbTsJi1FCAV-ibf6tZOoieBXWPgvCA",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://127.0.0.1:8000/api/users/?page=1&q=test",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"users",
+						""
+					],
+					"query": [
+						{
+							"key": "page",
+							"value": "1"
+						},
+						{
+							"key": "q",
+							"value": "test"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "List pending requests",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzA1NjQyOTA2LCJpYXQiOjE3MDU2NDExMDYsImp0aSI6ImNlNmE2MDM5OGJhZTRhMzE4MGVhNWM0ZjU4OWM5NGE3IiwidXNlcl9pZCI6MTB9.r4QN6NHcOmxIMF9h_ZTkiLnS7J_SB70HO0TM9VHCt9U",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://127.0.0.1:8000/api/request/?page=1",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"request",
+						""
+					],
+					"query": [
+						{
+							"key": "page",
+							"value": "1"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Send Friend Request",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzA1NjQyOTA2LCJpYXQiOjE3MDU2NDExMDYsImp0aSI6ImNlNmE2MDM5OGJhZTRhMzE4MGVhNWM0ZjU4OWM5NGE3IiwidXNlcl9pZCI6MTB9.r4QN6NHcOmxIMF9h_ZTkiLnS7J_SB70HO0TM9VHCt9U",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "to_user",
+							"value": "9",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://127.0.0.1:8000/api/request/",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"request",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Accept Friend Requests",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzA1NjQyOTA2LCJpYXQiOjE3MDU2NDExMDYsImp0aSI6ImNlNmE2MDM5OGJhZTRhMzE4MGVhNWM0ZjU4OWM5NGE3IiwidXNlcl9pZCI6MTB9.r4QN6NHcOmxIMF9h_ZTkiLnS7J_SB70HO0TM9VHCt9U",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "status",
+							"value": "accepted",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://127.0.0.1:8000/api/status/13/",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"status",
+						"13",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Reject Friend Request",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzA1NjQyOTA2LCJpYXQiOjE3MDU2NDExMDYsImp0aSI6ImNlNmE2MDM5OGJhZTRhMzE4MGVhNWM0ZjU4OWM5NGE3IiwidXNlcl9pZCI6MTB9.r4QN6NHcOmxIMF9h_ZTkiLnS7J_SB70HO0TM9VHCt9U",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "status",
+						"value": "rejected",
+						"type": "text",
+						"disabled": true
+					}
+				],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "status",
+							"value": "rejected",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://127.0.0.1:8000/api/status/15/",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"status",
+						"15",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "List Friends",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzA1NjQyOTA2LCJpYXQiOjE3MDU2NDExMDYsImp0aSI6ImNlNmE2MDM5OGJhZTRhMzE4MGVhNWM0ZjU4OWM5NGE3IiwidXNlcl9pZCI6MTB9.r4QN6NHcOmxIMF9h_ZTkiLnS7J_SB70HO0TM9VHCt9U",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://127.0.0.1:8000/api/friends-list/?page=1",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"friends-list",
+						""
+					],
+					"query": [
+						{
+							"key": "page",
+							"value": "1"
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
